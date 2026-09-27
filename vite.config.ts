@@ -18,6 +18,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // in dev and in production and no longer needs this plugin registered here.
 
 export default defineConfig({
+  // Pin Nitro's deployment output to Vercel instead of the wrapper's
+  // Cloudflare fallback. The allocation engine remains client-side.
+  nitro: { preset: "vercel" },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
