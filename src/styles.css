@@ -1,0 +1,265 @@
+/* Fonts (Cairo + Plus Jakarta Sans) are loaded via <link> in src/routes/__root.tsx */
+
+
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * iSchool Brand Design System (Guidelines V 1.0 - 2026)
+ *
+ * Primary Colors:
+ * - Blue: #056FEC (60%)
+ * - Orange: #FF7F1C (30%)
+ * - Yellow: #FFD700 (10%)
+ *
+ * Secondary Colors:
+ * - Deep Blue: #043FAD
+ * - Cyan/Sky Blue: #05ACFF
+ * - Soft Background: #F7FAFF
+ *
+ * UI Neutral Colors:
+ * - White: #FFFFFF
+ * - Neutral 100: #E6EDF1
+ * - Neutral 200: #B1D1E6
+ * - Neutral 400: #85A5B9
+ * - Neutral 600: #597587
+ * - Neutral 900 (Deep Navy): #1F2A55
+ *
+ * Semantic Colors:
+ * - Error: Light: #FFD1D1 | Main: #DE1F1F | Dark: #AA1818
+ * - Success: Light: #BCECCA | Main: #0EAA3A | Dark: #0A852D
+ * - Warning: Light: #FCF9E5 | Main: #FFBB1C | Dark: #B4810B
+ */
+
+@theme inline {
+  --font-sans: "Somar Rounded", "Plus Jakarta Sans", "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Somar Rounded", "Plus Jakarta Sans", "Cairo", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Brand Specific Theme Tokens */
+  --color-brand-blue: #056FEC;
+  --color-brand-orange: #FF7F1C;
+  --color-brand-yellow: #FFD700;
+  --color-brand-deepblue: #043FAD;
+  --color-brand-sky: #05ACFF;
+  --color-brand-soft: #F7FAFF;
+
+  --color-brand-neutral-white: #FFFFFF;
+  --color-brand-neutral-100: #E6EDF1;
+  --color-brand-neutral-200: #B1D1E6;
+  --color-brand-neutral-400: #85A5B9;
+  --color-brand-neutral-600: #597587;
+  --color-brand-neutral-900: #1F2A55;
+
+  --color-brand-error-light: #FFD1D1;
+  --color-brand-error: #DE1F1F;
+  --color-brand-error-dark: #AA1818;
+
+  --color-brand-success-light: #BCECCA;
+  --color-brand-success: #0EAA3A;
+  --color-brand-success-dark: #0A852D;
+
+  --color-brand-warning-light: #FCF9E5;
+  --color-brand-warning: #FFBB1C;
+  --color-brand-warning-dark: #B4810B;
+
+  --color-chart-1: #056FEC;
+  --color-chart-2: #FF7F1C;
+  --color-chart-3: #05ACFF;
+  --color-chart-4: #0EAA3A;
+  --color-chart-5: #FFD700;
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* iSchool Light Theme */
+  --background: #F7FAFF;
+  --foreground: #1F2A55;
+
+  --card: #FFFFFF;
+  --card-foreground: #1F2A55;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2A55;
+
+  /* Primary: #056FEC */
+  --primary: #056FEC;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary: iSchool Orange #FF7F1C */
+  --secondary: #FF7F1C;
+  --secondary-foreground: #FFFFFF;
+
+  /* Muted */
+  --muted: #E6EDF1;
+  --muted-foreground: #597587;
+
+  /* Accent */
+  --accent: #E6EDF1;
+  --accent-foreground: #056FEC;
+
+  /* Destructive */
+  --destructive: #DE1F1F;
+  --destructive-foreground: #FFFFFF;
+
+  /* Border & Input */
+  --border: #E6EDF1;
+  --input: #E6EDF1;
+  --ring: #05ACFF;
+
+  /* Charts */
+  --chart-1: #056FEC;
+  --chart-2: #FF7F1C;
+  --chart-3: #05ACFF;
+  --chart-4: #0EAA3A;
+  --chart-5: #FFD700;
+
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1F2A55;
+  --sidebar-primary: #056FEC;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F7FAFF;
+  --sidebar-accent-foreground: #056FEC;
+  --sidebar-border: #E6EDF1;
+  --sidebar-ring: #05ACFF;
+}
+
+.dark {
+  --background: #11172E;
+  --foreground: #F7FAFF;
+
+  --card: #1F2A55;
+  --card-foreground: #F7FAFF;
+
+  --popover: #1F2A55;
+  --popover-foreground: #F7FAFF;
+
+  /* Primary */
+  --primary: #05ACFF;
+  --primary-foreground: #11172E;
+
+  /* Secondary: iSchool Orange #FF7F1C */
+  --secondary: #FF7F1C;
+  --secondary-foreground: #FFFFFF;
+
+  /* Muted */
+  --muted: #182245;
+  --muted-foreground: #85A5B9;
+
+  /* Accent */
+  --accent: #182245;
+  --accent-foreground: #05ACFF;
+
+  /* Destructive */
+  --destructive: #FFD1D1;
+  --destructive-foreground: #AA1818;
+
+  /* Border & Input */
+  --border: rgba(177, 209, 230, 0.15);
+  --input: rgba(177, 209, 230, 0.2);
+  --ring: #05ACFF;
+
+  /* Charts */
+  --chart-1: #05ACFF;
+  --chart-2: #FF7F1C;
+  --chart-3: #FFD700;
+  --chart-4: #BCECCA;
+  --chart-5: #056FEC;
+
+  /* Sidebar */
+  --sidebar: #1F2A55;
+  --sidebar-foreground: #F7FAFF;
+  --sidebar-primary: #05ACFF;
+  --sidebar-primary-foreground: #11172E;
+  --sidebar-accent: #182245;
+  --sidebar-accent-foreground: #05ACFF;
+  --sidebar-border: rgba(177, 209, 230, 0.15);
+  --sidebar-ring: #05ACFF;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  /* Brand Typography Hierarchy Defaults */
+  h1 {
+    font-weight: 700;
+  }
+
+  h2, h3 {
+    font-weight: 600;
+  }
+}
+
+/* Brand utility helper classes */
+.brand-gradient-hero {
+  background: linear-gradient(135deg, #056FEC 0%, #043FAD 60%, #05ACFF 100%);
+}
+
+.brand-gradient-card {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F7FAFF 100%);
+}
+
+.brand-gradient-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(5, 172, 255, 0.15) 0%, rgba(5, 111, 236, 0.05) 50%, transparent 100%);
+}
+
+.brand-border-glow {
+  box-shadow: 0 0 0 1px rgba(5, 111, 236, 0.15), 0 4px 20px -2px rgba(5, 111, 236, 0.08);
+}
