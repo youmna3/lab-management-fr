@@ -10,7 +10,7 @@ BEGIN;
 
 DO $$
 DECLARE
-  v_email text := 'REPLACE_WITH_INVITED_ADMIN_EMAIL';
+  v_email text := 'youmna54@gmail.com';
   v_user_id uuid;
   v_matches integer;
 BEGIN
@@ -19,7 +19,7 @@ BEGIN
     RAISE EXCEPTION 'Set v_email to the exact invited administrator email before running this script';
   END IF;
 
-  SELECT count(*), min(id)
+  SELECT count(*), (array_agg(id))[1]
   INTO v_matches, v_user_id
   FROM auth.users
   WHERE lower(email) = lower(v_email);
